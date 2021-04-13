@@ -1,7 +1,9 @@
 <?php 
+wp_head();
 
-newPost("szemelyek_tata_honlap_final.xlsx", "szervezeti_egyseg", "szemely");
+newPost("szemelyek_tata_honlap_final.xlsx", "szervezeti_egyseg", "szemelyek");
 
+//2
 
 function newPost($table_name, $taxonomy, $cpt)
 {
@@ -37,12 +39,14 @@ function newPost($table_name, $taxonomy, $cpt)
                     'post_status' => "publish",
                     "meta_input" => $meta_input,
                 );
-               
+                
                 
                 $post_id = wp_insert_post($insert_data_array, true);
                 
+                
+                
                 wp_set_object_terms( $post_id, $elt[1], $taxonomy );
-                   
+                
                 
             }
         }
@@ -56,4 +60,6 @@ function newPost($table_name, $taxonomy, $cpt)
     
 }
 
-get_footer();
+
+
+wp_footer();
