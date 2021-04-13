@@ -25,7 +25,7 @@ function newPost($table_name, $taxonomy, $cpt)
                     if ($meta_key) {
                         $index = array_search($meta_key, $table_heads);
                         if ($index > 1) {
-                            $meta_input[sanitize_title($meta_key)] = $elt[$index];                            
+                            $meta_input[sanitize_title('szemelyek_'.$meta_key)] = $elt[$index];                            
                         }
                     }
                 }
